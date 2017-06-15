@@ -148,7 +148,7 @@ static MPCoreInstanceProvider *sharedProvider = nil;
 - (NSString *)userAgent
 {
     if (!_userAgent) {
-        self.userAgent = [[[UIWebView alloc] init] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+        _userAgent = [[[UIWebView alloc] init] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
     }
 
     return _userAgent;
