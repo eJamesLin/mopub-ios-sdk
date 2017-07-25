@@ -62,7 +62,7 @@
             __weak __typeof__(self) weakSelf = self;
             [self.imageDownloadQueue addDownloadImageURLs:@[imageURL]
                                           completionBlock:^(NSArray *errors) {
-                                              __strong __typeof__(self) strongSelf = weakSelf;
+                                              __strong __typeof__(weakSelf) strongSelf = weakSelf;
                                               if (strongSelf) {
                                                   if (errors.count == 0) {
                                                       UIImage *image = [UIImage imageWithData:[[MPNativeCache sharedCache] retrieveDataForKey:imageURL.absoluteString]];
